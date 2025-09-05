@@ -1,0 +1,31 @@
+Função tipada define o tipo dos parâmetros de entrada e o tipo do retorno da função.
+
+🧩 Estrutura:
+php
+
+function nomeFuncao(tipo $param1, tipo $param2): tipoRetorno {
+    // corpo da função
+    return valor;
+}
+🧠 Para que serve:
+Evita erros de tipo (ex: passar texto onde devia ser número)
+
+Deixa o código mais claro e seguro
+
+Facilita a manutenção e leitura
+
+🧪 Exemplos práticos:
+php
+
+// Soma de dois números float e retorna float
+function somar(float $a, float $b): float {
+    return $a + $b;
+}
+
+// Retorna se uma pessoa é maior de idade
+function maiorDeIdade(int $idade): bool {
+    return $idade >= 18;
+}
+ℹ️ Dica para lembrar:
+“Parâmetro entra com tipo, retorno sai com tipo.”
+(Entrada e saída tipadas = segurança e clareza no código)
