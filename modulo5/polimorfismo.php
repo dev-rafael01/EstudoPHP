@@ -18,10 +18,10 @@ class Cachorro extends Animal{
 class FilaBrasileiro extends Cachorro{
 
     public $nome = 'Fila Brasileiro';
-    public $meses = 3;
+    public $meses = 6;
     public function emitirSom()
     {
-        if($this->meses > 6){
+        if($this->meses >= 6){
             return 'RUF RUF';
         }else{
            return parent::emitirSom();
