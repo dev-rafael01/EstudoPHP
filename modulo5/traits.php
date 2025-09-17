@@ -1,48 +1,31 @@
 <?php
 
-trait logger
+
+function meu_autoload($classes)
 {
-    public function log($mensagem)
+    $diretorios = ['classes/', 'traits/', 'outro_diretorio'];
+
+    foreach($diretorios as $diretorio)
     {
-        echo '<br/> [LOG]: '. $mensagem . '<br/>';
-        echo 'Data: ' . date('d-m-y') . '<br/>';
+        $diretorio = strtolower($diretorio);
+        $classes = strtolower($classes);
+
+        if(file_exists($diretorio . $classes . '.classe.php'))
+        {
+            include_once($diretorio . $classes . '.classe.php');
+            break;
+        }
     }
+    
 }
 
-class user
-{
+spl_autoload_register('meu_autoload');
 
-    use logger;
 
-    public function createUser()
-    {
-        echo 'Usuario criado ';
-        $this->log('Usuario criado');
-    }
 
-    public function loginUser()
-    {
-        echo 'Usuario Logado';
-        $this->log('Usuario Logado');
-    }
-}
-class file
-{
 
-    use logger;
 
-    public function created()
-    {
-        echo 'Arquirvo criado';
-        $this->log('Arquirvo criado');
-    }
 
-    public function deleted()
-    {
-        echo 'Arquivo deletado';
-        $this->log('Arquivo deletado');
-    }
-}
 
 $user = new user();
 $user->createUser();
