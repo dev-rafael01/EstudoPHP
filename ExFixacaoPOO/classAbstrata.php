@@ -25,11 +25,11 @@ class Gato extends animal
 
 
 $gato = new Gato();
-$gato->emitirSom();
+echo $gato->emitirSom();
 echo '<hr/>';
 
-$cahorro = new Cachorro();
-$cachorro->emitirSom();
+$cachorro = new Cachorro();
+echo $cachorro->emitirSom();
 
 
 ?>
