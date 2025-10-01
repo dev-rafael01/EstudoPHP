@@ -1,17 +1,24 @@
 <?php
 require_once 'vendor/autoload.php';
 
+use \Rafael\Biblioteca\Livro;
+use \Rafael\Biblioteca\Estante;
+
 echo 'Sistema de Bibliotca Iniciando <br/>';
 
-use Rafael\Biblioteca\Livro;
 
-$livro = new Livro('Rafael Jesus', 'PHP 8 E OOP');
-echo "<pre/>";
+$livro = new Livro('B7WEB','PHP 8 E OOP');
+$livro2 = new Livro('B7WEB', 'Java pra Iniciantes');
+$livro3 = new Livro('B7WEB', 'Python pra Iniciantes');
 
-echo 'Livro' . $livro->getTitulo() . '<br/>';
-echo 'Autor' . $livro->getAutor() . '<br/>';
-echo 'Disponveil: ' . ($livro->estaDisponivel() ? 'sim' : 'não') . '<br/>';
+$estante = new Estante();
+$estante->adicionarLivro($livro);
+$estante->adicionarLivro($livro2);
+ $estante->adicionarLivro($livro3);
+echo '<pre/>';
+print_r($estante);
+echo '<hr/>';
+$estante->removerLivro($livro);
 
-
-
+print_r($estante);
 ?>

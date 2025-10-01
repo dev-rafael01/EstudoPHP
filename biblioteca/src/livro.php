@@ -6,16 +6,17 @@ class Livro
 {
     //Propriedades
 
-    private string $titulo;
     private string $autor;
+    private string $titulo;
     private bool $disponivel = false;
 
     //Contrutor da class
 
-    public function __construct(string $titulo, string $autor)
+    public function __construct( string $autor, string $titulo)
     {
-        $this->titulo =$titulo;
         $this->autor = $autor;
+        $this->titulo =$titulo;
+        
         // $this->disponivel = $disponivel;
     }
 
