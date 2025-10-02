@@ -3,22 +3,26 @@ require_once 'vendor/autoload.php';
 
 use \Rafael\Biblioteca\Livro;
 use \Rafael\Biblioteca\Estante;
+use Rafael\Biblioteca\usuario;
 
 echo 'Sistema de Bibliotca Iniciando <br/>';
 
 
-$livro = new Livro('B7WEB','PHP 8 E OOP');
+$livro1 = new Livro('B7WEB','PHP 8 E OOP');
 $livro2 = new Livro('B7WEB', 'Java pra Iniciantes');
 $livro3 = new Livro('B7WEB', 'Python pra Iniciantes');
+$livro1->marcaComoDisponivel();
+$livro2->marcaComoDisponivel();
 
 $estante = new Estante();
-$estante->adicionarLivro($livro);
+$estante->adicionarLivro($livro1);
 $estante->adicionarLivro($livro2);
- $estante->adicionarLivro($livro3);
-echo '<pre/>';
-print_r($estante);
-echo '<hr/>';
-$estante->removerLivro($livro);
+$estante->adicionarLivro($livro3);
 
-print_r($estante);
+$livroEncontrador = $estante->buscarLivroPorTitulo('php');
+
+$professor = new Usuario('Professor Rafael', 'professor');
+echo '<pre/>';
+var_dump($professor)
+
 ?>

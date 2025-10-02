@@ -30,12 +30,39 @@ class Estante
 
     public function buscarLivroPorTitulo(string $titulo): ?Livro
     {
+        foreach($this->livros as $livro)
+        {
+         if(str_contains(strtolower($livro->getTitulo()), strtolower($titulo))){
+            return $livro;
+         }
+        }
         return null;
     }
 
     public function listarLivrosDisponiveis()
     {
-       return [];
+
+      //Forma longa, mas com o mesmo objetivo
+
+      $livrosDisponveis = [];
+
+      foreach($this->livros as $livroAtual)
+      {
+          if($livroAtual->estaDisponivel())
+          {
+            $livrosDisponveis[] = $livroAtual;
+          }
+      }
+         return $livrosDisponveis;
+
+
+      //Forma simplificada (abaixo)
+      
+      //  return array_filter($this->livros,
+      //  function($livroAtual)
+      //  {
+      //    return $livroAtual->estaDisponivel();
+      //  });
     }
 }
 
