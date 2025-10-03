@@ -2,34 +2,27 @@
 
 namespace Rafael\Biblioteca;
 
-class Usuario
+abstract class Usuario
 {
-     private $nome;
-     private $tipo;
-     private array $livrosEmprestados = [];
+     protected $nome;
+     protected array $livrosEmprestados = [];
 
-     public function __construct(string $nome, string $tipo = 'aluno')
+     public function __construct(string $nome)
      {
         $this->nome = $nome;
-        $this->tipo = $tipo;
+        
      }
 
-     public function podePegarEmprestado(): bool
-     {
-       if($this->tipo == 'professor' && count($this->livrosEmprestados) < 3)
-        {
-            return true;
-        }
-        if($this->tipo == 'aluno' && count($this->livrosEmprestados) < 1)
-        {
-            return true;
-        }
-
-        return false;
-     }
+     abstract public  function podePegarEmprestado(): bool;
+   
+     
      public function adicionarLivroEmprestado(Livro $livro): void
      {
-        $this->livrosEmprestados [] = $livro;
+       if($this->podePegarEmprestado()){
+         $this->livrosEmprestados[] = $livro;
+       }else{
+            throw new \Exception('O usuario nao tem permissão para pegar livros emprestados..');
+       }
      }
 
      public function removerLivroEmprestado(livro $livro): void 
