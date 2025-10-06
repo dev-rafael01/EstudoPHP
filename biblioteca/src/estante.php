@@ -28,6 +28,11 @@ class Estante
         );
      }
 
+     public function verificarLivro(Livro $livro): bool
+     {
+        return in_array($livro, $this->livros);
+     }
+
     public function buscarLivroPorTitulo(string $titulo): ?Livro
     {
         foreach($this->livros as $livro)

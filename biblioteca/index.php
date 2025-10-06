@@ -5,7 +5,8 @@ use \Rafael\Biblioteca\Livro;
 use \Rafael\Biblioteca\Estante;
 use Rafael\Biblioteca\Aluno;
 use Rafael\Biblioteca\Professor;
-use Rafael\Biblioteca\Visitante;
+// use Rafael\Biblioteca\Visitante;
+use Rafael\Biblioteca\Bibliotecario;
 
 echo 'Sistema de Bibliotca Iniciando <br/>';
 
@@ -23,20 +24,22 @@ $estante->adicionarLivro($livro3);
 
 $livroEncontrador = $estante->buscarLivroPorTitulo('php');
 
-// $aluno = new Aluno('Rafael');
-// $aluno->adicionarLivroEmprestado($livro1);
-// $professor = new Professor('Santos');
-// $professor->adicionarLivroEmprestado($livro1);
-// $professor->adicionarLivroEmprestado($livro2);
+$aluno = new Aluno('Rafael Santos');
+$aluno2 = new Aluno('Adriano Santos');
 
-$visitante = new Visitante('Adriano');
-$visitante->adicionarLivroEmprestado($livro1);
+// $bibliotecario = new Bibliotecario();
+
+try{
+    Bibliotecario::emprestarLivro($aluno, $livro1, $estante);
+    echo 'Livro ' . $livro1->getTitulo() . ' Emprestado para '. $aluno->getNome() . '<br/>';
+    Bibliotecario::devolverLivro($aluno2, $livro1, $estante);
+}catch (\Exception $e){
+    echo 'ERRO: '. $e->getMessage(). '<br/>';
+}
+
+
 
 echo '<pre/>';
-// var_dump($visitante->listarLivrosEmprestados());
-// var_dump($aluno->listarLivrosEmprestados());
-// echo '<pre/>';
-// var_dump($professor->podePegarEmprestado());
-// var_dump($professor->listarLivrosEmprestados());
+
 
 ?>
