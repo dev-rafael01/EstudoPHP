@@ -5,8 +5,8 @@ $dsn = "mysql:host=$ENV_HOST;dbname=$ENV_DBNAME"; // String de conexão com o ba
 
 
 try{
-  $connection = new PDO($dsn, $ENV__USERNAME, $ENV_PASSOWORD);
-  echo 'Conexão bem sucedida.';
+ $pdo = new PDO($dsn, $ENV__USERNAME, $ENV_PASSOWORD);
+  echo 'Conexão bem sucedida. <hr><br/>';
 } catch (PDOException $e){
    echo 'ERRO na Conexão ' . $e->getMessage();
 }
