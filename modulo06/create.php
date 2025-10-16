@@ -6,15 +6,19 @@ $slq =  'INSERT INTO usuarios (username, name, password) VALUES (:username, :nam
 
 $stmt = $pdo->prepare($slq);
 
-$_username = 'RafaelSantos1234';
-$_name = 'Rafael Jesus1234';
+$_username = 'Lethicia';
+$_name = 'Lethicia Jesus';
 $_password = '1234567';
 
-$stmt->bindParam(':username', $_username);
+$stmt->bindParam(':username', $_username );
 $stmt->bindParam(':name', $_name);
 $stmt->bindParam(':password', $_password);
 
-$stmt->execute();
+if ($stmt->execute()){
+    echo ' Usuario inserido com sucesso.';
+}else{
+    echo 'Nenhum dado foi inserido no banco';
+}
 
 
 

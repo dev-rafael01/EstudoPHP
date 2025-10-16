@@ -4,9 +4,9 @@ require_once 'connection.php';
 
 //pdo
 
-$id =  1;
-$novoNome = 'Novo nome de testes';
-$novoUsername = 'novo-username';
+$id =  4;
+$novoNome = 'Claudio';
+$novoUsername = 'Claudio Silva';
 
 $sql = 'UPDATE usuarios SET name = :name, username = :username WHERE id = :id ';
 
@@ -19,7 +19,8 @@ $queryExecute = $stmt->execute();
 // var_dump($queryExecute);
 
 if($queryExecute){
-    echo 'Usuario atualizado com sucesso';
+    echo 'Usuario atualizado com sucesso <br>';
+    echo $stmt->rowCount() . ' Linhas Afetadas!';
 }else{
     echo 'Erro ao atualizar';
 }
