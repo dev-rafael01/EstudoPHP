@@ -1,11 +1,12 @@
 <?php
+
 require_once __DIR__ . '/../core/Controller.php';
 
-class HomeController  extends Controller
+class NoticiasController extends Controller
 {
    public function index()
    {
-     $this->view('home/index');
+     $this->view('noticias/index');
    }
 }
 
