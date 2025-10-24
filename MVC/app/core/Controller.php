@@ -5,7 +5,12 @@ class Controller
  protected function view($view)
  {
     $viewFile = __DIR__ . '/../views/' . $view . '.php';
-    require_once $viewFile;
+   
+    if(!file_exists($viewFile)){
+        throw new Exception("Falha ao carregar a view") . $viewFile;
+    }
+     require_once $viewFile;
+
  }
 
 }
