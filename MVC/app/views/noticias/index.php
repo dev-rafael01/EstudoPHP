@@ -8,5 +8,7 @@
 <body>
     <h1>Noticias</h1>
     <p>Esta e pagina noticias</p>
+    
+
 </body>
 </html>
