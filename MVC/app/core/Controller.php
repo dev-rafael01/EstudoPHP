@@ -1,15 +1,14 @@
 <?php
-
-class Controller
-{
- protected function view($view , $viewData = [])
- {
-     /* A função extract() no PHP pega as chaves de um array associativo e transforma em variáveis com esses nomes.
+ /* A função extract() no PHP pega as chaves de um array associativo e transforma em variáveis com esses nomes.
     💡 Ou seja:
     extract() “tira” os valores do array e cria variáveis 
     automaticamente com o nome das chaves.
     */
 
+class Controller
+{
+ protected function view($view , $viewData = [])
+ {   
     extract($viewData);
     $viewFile = __DIR__ . '/../views/' . $view . '.php';
    
