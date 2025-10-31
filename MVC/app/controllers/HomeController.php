@@ -12,6 +12,10 @@ class HomeController  extends Controller
      //retornando pro home
      $this->view('home/index', $data);
    }
+
+   public function contact(){
+     $this->view('home/contact');
+   }
 }
 
 ?>
