@@ -8,6 +8,10 @@ class NoticiasController extends Controller
    {
      $this->view('noticias/index');
    }
+   public function noticia($idNoticia = null, $segundoParametro = null)
+   {
+      $this->view('noticias/noticia', ['idNoticia' => $idNoticia]);
+   }
 }
 
 ?>

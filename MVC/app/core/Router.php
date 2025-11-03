@@ -23,12 +23,19 @@ class Router
 
         $acitionName = $partes[1] ?? 'index';
        
-        if(method_exists($controller, $acitionName)){
-            $controller->$acitionName();
-        }else{
-            http_response_code(404);
-            echo 'ERRO 404- PAGINA NÃO ENCONTRADA';
-        }
+      if (!method_exists($controller, $acitionName)){
+        $controllerName = 'NotFoundController';
+        $controller = new $controllerName();
+        $acitionName = 'index';
+        // $controller->$acitionName();
+        // exit;
+      }
+
+      $params = array_slice($partes, 2);
+      
+    //$controller->$acitionName();
+
+    call_user_func_array([$controller, $acitionName], $params);
 
 
     }
