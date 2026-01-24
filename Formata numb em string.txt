@@ -1,0 +1,12 @@
+number_format
+(PHP 4, PHP 5, PHP 7, PHP 8)
+
+number_format — Formata um número com milhares agrupados
+
+Descrição ¶
+number_format(
+    float $num,
+    int $decimals = 0,
+    ?string $decimal_separator = ".",
+    ?string $thousands_separator = ","
+): string

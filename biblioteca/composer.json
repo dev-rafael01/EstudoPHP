@@ -1,0 +1,15 @@
+{
+    "name": "rafael/biblioteca",
+    "description": "Nossa biblioteca oop",
+    "autoload": {
+        "psr-4": {
+            "Rafael\\Biblioteca\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rafael Santos"
+        }
+    ],
+    "require": {}
+}

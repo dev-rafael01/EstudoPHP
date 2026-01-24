@@ -1,0 +1,40 @@
+<?php
+
+//SuperGlobais no PHP
+// são variaveis que estão definidas para gente no escopo global
+
+//$_GET
+
+//$nome = $_GET('pessoa');
+
+// $nome = $_GET['pessoa'];
+// $idade = $_GET['idade'];
+// $cidade = $_GET['cidade'];
+
+// echo "Ola, $nome, voce tem $idade anos, e mora em  $cidade";
+
+
+//=============================//========
+
+/**
+ * isset() -> verifica se uma variavel foi setada, mas ignora totalmente se tem ou nao valor
+ * 
+ * 
+ * empty() -> verifica se um variavel foi setada, e se ela tem valor.
+ * 
+ * 
+ * variavel que nao tem valor, ela pode ser ( "", null, undefined)
+ * 
+ * 
+ */
+
+// $numero_campanha = $_GET['campanha'];
+// echo 'Voce veio pela campanha' . $numero_campanha;
+
+
+if(!empty($_GET['campanha'])){
+    $numero_campanha = $_GET['campanha'];
+    echo 'Voce veio pela campanha' . $numero_campanha;
+}else{
+    echo 'Variavel nao definida ou vazia';
+}

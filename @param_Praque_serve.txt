@@ -1,0 +1,44 @@
+O @param nos comentários do PHP é uma anotação de documentação usada com o padrão PHPDoc, que serve para explicar o que a função faz, que tipo de dados ela espera e o que retorna.
+
+📘 Para que serve?
+📄 Documentar o código para outros devs (ou para você mesmo no futuro 😅)
+
+💡 Ferramentas como VSCode, PHPStorm, PHPDoc, PHPStan usam isso para mostrar dicas, validar código e gerar documentação automática
+
+🧩 Estrutura do PHPDoc com @param e @return
+php
+
+ * Soma dois números.
+ *
+ * @param float $a Primeiro número
+ * @param float $b Segundo número
+ * @return float Resultado da soma
+ */
+function somar(float $a, float $b): float {
+    return $a + $b;
+}
+✅ Outras anotações úteis:
+Anotação	Para quê serve
+@param	Tipo e nome de cada parâmetro
+@return	Tipo do valor retornado
+@throws	Exceções que a função pode lançar
+@var	Tipo de variável em escopo fora da função
+@author	Nome do autor do código
+@deprecated	Marca código antigo que não deve mais ser usado
+
+🧠 Dica para anotar:
+Sempre que criar uma função com lógica importante ou parâmetros, documente com @param e @return.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
