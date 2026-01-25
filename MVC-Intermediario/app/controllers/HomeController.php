@@ -11,8 +11,10 @@ class HomeController extends Controller{
     $data = $usuario->getUserData();
 
         //Retorna a view do home
-         $this->views('home/index', $data);
-
-         
+         $this->views('home/index', $data);        
+    }
+                // Contato
+    public function contact(){
+        $this->views('home/contact');
     }
 }

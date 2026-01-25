@@ -7,13 +7,9 @@
 </head>
 <body>
      <h1> Noticias </h1>
-     <p>Esta e a pagina de  Noticias. </p>
+     <p>Texto da Noticia Numero: <?=  $idNoticia ?> </p>
 
-     <hr>
-     <ul>
-        <li> Primeira noticia </li>
-        <li> Segunda noticia</li>
-        <li> Terceira noticia</li>
+  
      </ul>
 </body>
 </html>

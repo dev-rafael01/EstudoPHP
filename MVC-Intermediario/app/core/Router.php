@@ -30,8 +30,22 @@ class Router {
         // Aqui eu crio uma instância da classe HomeController
         $controller = new $controllerName();
 
+        $actionName = $partes[1] ?? 'index';
+
+        //Verifica se o método existe dentro do Controller.
+        if(!method_exists($controller, $actionName)){
+            $controllerName = 'NotFoundController';
+            $controller = new $controllerName();
+            $actionName = 'index';
+        }
+
+        $params = array_slice($partes, 2);
+
+        call_user_func_array([$controller, $actionName], $params);
+
         // Aqui eu chamo a função (método) index que está dentro da classe HomeController
-        $controller->index();
+        // $controller->index();
+        $controller->$actionName();
 
        
         

@@ -8,4 +8,11 @@ class NoticiasController extends Controller{
         //Retorna a view de Noticias
         $this->views('noticias/index');
     }
+
+    public function noticia($idNoticia = null){
+        $this->views('noticias/noticia' , ['idNoticia' => $idNoticia]);
+
+
     }
+
+}
