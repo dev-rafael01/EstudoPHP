@@ -1,0 +1,11 @@
+{
+    "name": "rafael/mvc",
+    "description": "instrutura mvc",
+    "authors": [
+        {
+            "name": "Rafael Santos",
+            "email": "rafaelsantos.js30@gmail.com"
+        }
+    ],
+    "require": {}
+}
