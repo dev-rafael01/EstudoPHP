@@ -1,6 +1,9 @@
 <?php
+namespace app\Controllers;
 
-require_once __DIR__ . '/../core/Controller.php';
+use App\Core\Controller;
+
+// require_once __DIR__ . '/../core/Controller.php';
 
 class NoticiasController extends Controller{
     public function index()

@@ -1,5 +1,6 @@
 <?php
 
+namespace app\Core;
 
 class Controller {
     protected function views($view, $viewDate = [])
@@ -16,7 +17,7 @@ class Controller {
         if(!file_exists($viewFile))
             {
                 //Se a view não existir | dispara uma Exception  evita erro silencioso |facilita debug  |  Isso é coisa de projeto organizado, ponto positivo:
-                throw new Exception("View file not Found(Arquivo não encontrado) "  . $viewFile );
+                throw new \Exception("View file not Found(Arquivo não encontrado) "  . $viewFile );
                 
             }
         require_once $viewFile;

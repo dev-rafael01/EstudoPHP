@@ -1,7 +1,14 @@
 <?php
-    require_once ('../app/controllers/HomeController.php');
-    require_once ('../app/controllers/NoticiasController.php');
-    require_once ('../app/controllers/errors/HttpErrorController.php');
+namespace app\Core;
+
+use App\Controllers\HomeController;
+Use App\Controllers\NoticiasController;
+use App\Controllers\Errors\HttpErrorController;
+
+
+    // require_once ('../app/controllers/HomeController.php');
+    // require_once ('../app/controllers/NoticiasController.php');
+    // require_once ('../app/controllers/errors/HttpErrorController.php');
 
 
 class Router {
@@ -27,7 +34,7 @@ class Router {
          // Evita erro fatal ao instanciar classes inexistentes.
         if(!class_exists($controllerName)){
             $controller =  new HttpErrorController;
-            $controller->NotFound();
+            $controller->notFound();
             return;
         }
         // Aqui eu crio uma instância da classe HomeController
@@ -36,7 +43,7 @@ class Router {
         //Verifica se o método existe dentro do Controller.
         if(!method_exists($controller, $actionName)){
             $controller =  new HttpErrorController;
-            $controller->NotFound();
+            $controller->notFound();
             return;
         }
 
