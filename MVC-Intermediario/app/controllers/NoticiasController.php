@@ -1,9 +1,9 @@
 <?php
-namespace app\Controllers;
+namespace App\Controllers;
 
 use App\Core\Controller;
 
-// require_once __DIR__ . '/../core/Controller.php';
+
 
 class NoticiasController extends Controller{
     public function index()

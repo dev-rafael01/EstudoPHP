@@ -1,14 +1,9 @@
 <?php
-namespace app\Core;
+namespace App\Core;
 
 use App\Controllers\HomeController;
 Use App\Controllers\NoticiasController;
 use App\Controllers\Errors\HttpErrorController;
-
-
-    // require_once ('../app/controllers/HomeController.php');
-    // require_once ('../app/controllers/NoticiasController.php');
-    // require_once ('../app/controllers/errors/HttpErrorController.php');
 
 
 class Router {
@@ -24,9 +19,12 @@ class Router {
         // Define o nome do controller com base na primeira parte da URL ou usa "Home" como padrão
         $controllerName = $partes[0] ?? 'Home';
         // Coloca a primeira letra do controller em maiúscula e adiciona o sufixo "Controller"
+
+        dd($controllerName);
+
         $controllerName = ucfirst($controllerName) . 'Controller';
         $actionName = $partes[1] ?? 'index';
-
+    
 
 
          //pagina de erro do 404
