@@ -45,7 +45,7 @@ class Router {
             return;
         }
         $params = array_slice($parts, 2);
-        dd($params);
+        // dd($params);
         
      
 
